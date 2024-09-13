@@ -1,0 +1,158 @@
+
+
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Alejandro'AND p2.Name = 'Kaden'
+CREATE (p2)-[r:FRIEND_OF {Friend_Since:[date("2006-09-11")]}]->(p1);
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Kaden'AND p2.Name = 'Alejandro'
+CREATE (p1)-[r:FRIEND_OF {Friend_Since:[date("2006-09-11")]}]->(p2);
+
+
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Alejandro'AND p2.Name = 'Bradley'
+CREATE (p2)-[r:FRIEND_OF {Friend_Since:[date("2008-10-10")]}]->(p1);
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Bradley'AND p2.Name = 'Alejandro'
+CREATE (p1)-[r:FRIEND_OF {Friend_Since:[date("2008-10-10")]}]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Alejandro'AND p2.Name = 'Herman'
+CREATE (p2)-[r:FRIEND_OF {Friend_Since:[date("2008-01-10")]}]->(p1);
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Herman'AND p2.Name = 'Alejandro'
+CREATE (p1)-[r:FRIEND_OF {Friend_Since:[date("2008-01-10")]}]->(p2);
+
+
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'John'AND p2.Name = 'Kaden'
+CREATE (p2)-[r:FRIEND_OF {Friend_Since:[date("2007-05-11")]}]->(p1);
+MATCH
+(p1:Person),
+(p2:Person)
+WHERE p1.Name = 'Kaden'AND p2.Name = 'John'
+CREATE (p1)-[r:FRIEND_OF {Friend_Since:[date("2007-05-11")]}]->(p2);
+
+
+
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'James'AND p2.Title = 'Split'
+CREATE (p1)-[r:ACTED_IN {Roles:['Kevin Crumb']}]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'James'AND p2.Title = 'IT: Chapter 2'
+CREATE (p1)-[r:ACTED_IN {Roles:['Kevin Crumb']}]->(p2);
+
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Keanu'AND p2.Title = 'John Wick'
+CREATE (p1)-[r:ACTED_IN {Roles:['John Wick']}]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Keanu'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:ACTED_IN {Roles:['Neo']}]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Lana'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:DIRECTOR_OF]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Lilly'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:DIRECTOR_OF]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Chad'AND p2.Title = 'John Wick'
+CREATE (p1)-[r:DIRECTOR_OF]->(p2);
+
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'M.Night'AND p2.Title = 'Split'
+CREATE (p1)-[r:DIRECTOR_OF]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Andy'AND p2.Title = 'IT: Chapter 2'
+CREATE (p1)-[r:DIRECTOR_OF]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Bradley'AND p2.Title = 'IT: Chapter 2'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Bradley'AND p2.Title = 'John Wick'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Alejandro'AND p2.Title = 'John Wick'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Alejandro'AND p2.Title = 'Split'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Kaden'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'John'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'John'AND p2.Title = 'Split'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Herman'AND p2.Title = 'Split'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Herman'AND p2.Title = 'IT: Chapter 2'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
+MATCH
+(p1:Person),
+(p2:Movie)
+WHERE p1.Name = 'Herman'AND p2.Title = 'The Matrix'
+CREATE (p1)-[r:RECOMMENDS]->(p2);
